@@ -216,7 +216,7 @@ const days = [
 ];
 
 const LoadTodayRoutine = (semseter) => {
-  const dayNumber = new Date().getDay() - 1;
+  const dayNumber = new Date().getDay();
 
   const subjects = routine[`bca_sem${semseter}`].Days[days[dayNumber]];
   const timeDurations = routine[`bca_sem${semseter}`].Head;
@@ -262,4 +262,5 @@ submitElement.addEventListener("click",(e) => {
     containerElement.innerHTML = "";
     const semester = selectElement.value;
     LoadTodayRoutine(semester);
+
 });
