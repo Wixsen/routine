@@ -271,6 +271,6 @@ semseterSubmitBtnElement.addEventListener("click", (e) => {
   if (selectSemseterElement.value === "none") return;
   container.innerHTML = "";
   const selectedSem = `bca_sem${selectSemseterElement.value}`;
-  const json = routine[selectedSem];
-  CreateRoutineTable(json, selectSemseterElement.value);
+  CreateRoutineTable(selectSemseterElement.value);
 });
+
