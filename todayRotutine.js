@@ -55,15 +55,15 @@ const routine = {
         "BCA25103P CA (ETC)",
         "BCA25103P CA (ETC)",
       ],
-      // Saturday: [
-      //     "TEST/ REMEDIAL",
-      //     "TEST/ REMEDIAL",
-      //     "TEST/ REMEDIAL",
-      //     "TEST/ REMEDIAL",
-      //     "TEST/ REMEDIAL",
-      //     "TEST/ REMEDIAL",
-      //     "TEST/ REMEDIAL",
-      // ],
+      Saturday: [
+        "TEST/ REMEDIAL",
+        "TEST/ REMEDIAL",
+        "TEST/ REMEDIAL",
+        "TEST/ REMEDIAL",
+        "TEST/ REMEDIAL",
+        "TEST/ REMEDIAL",
+        "TEST/ REMEDIAL",
+      ],
     },
   },
   bca_sem3: {
@@ -80,47 +80,47 @@ const routine = {
       Monday: [
         "MDC-III",
         "SEC-III",
-        "BCA23202T DBMS (MRS)",
-        "BCA23203T OS (AA)",
+        "DBMS (MRS)",
+        "OS (AA)",
         "Break",
-        "BCA23201T OOP (JB)",
-        "BCA23201P OOP (JB)",
+        "OOP (JB)",
+        "Lab: OOP (JB)",
       ],
       Tuesday: [
-        "BCA23202T DBMS (MRS)",
+        "DBMS (MRS)",
         "AEC-III",
-        "BCA23202P DBMS (MRS)",
-        "BCA23202P DBMS (MRS)",
+        "Lab: DBMS (MRS)",
+        "Lab: DBMS (MRS)",
         "Break",
-        "BCA23203T OS (AA)",
-        "BCA23203T OS (AA)",
+        "OS (AA)",
+        "OS (AA)",
       ],
       Wednesday: [
-        "MDC-III",
-        "SEC-III",
+        "MDC",
+        "SEC",
         "LIBRARY",
-        "BCA23201T OOP (JB)",
+        "OOP (JB)",
         "Break",
-        "BCA23201P OOP (JB)",
-        "BCA23201P OOP (JB)",
+        "Lab: OOP (JB)",
+        "Lab: OOP (JB)",
       ],
       Thursday: [
         "BCA23203T OS (AA)",
         "AEC-III",
-        "BCA23201T OOP (JB)",
-        "BCA23201P OOP (JB)",
+        " OOP (JB)",
+        "Lab: OOP (JB)",
         "Break",
-        "BCA23202T DBMS (MRS)",
-        "BCA23202P DBMS (MRS)",
+        "DBMS (MRS)",
+        "Lab: DBMS (MRS)",
       ],
       Friday: [
         "MDC-III",
         "SEC-III",
-        "BCA23202T DBMS (MRS)",
-        "BCA23202P DBMS (MRS)",
+        "DBMS (MRS)",
+        "Lab: DBMS (MRS)",
         "Break",
-        "BCA23201T OOP (JB)",
-        "BCA23201P OOP (JB)",
+        "OOP (JB)",
+        "Lab: OOP (JB)",
       ],
       Saturday: [
         "TEST/ REMEDIAL",
@@ -189,22 +189,22 @@ const routine = {
         "BCA23301T CN JB",
         "PROJECT RP",
       ],
-      //         Saturday: [
-      //             "TEST/ REMEDIAL",
-      //             "TEST/ REMEDIAL",
-      //             "TEST/ REMEDIAL",
-      //             "TEST/ REMEDIAL",
-      //             "TEST/ REMEDIAL",
-      //             "TEST/ REMEDIAL",
-      //             "TEST/ REMEDIAL",
-      //   ],
+      Saturday: [
+        "TEST/ REMEDIAL",
+        "TEST/ REMEDIAL",
+        "TEST/ REMEDIAL",
+        "TEST/ REMEDIAL",
+        "TEST/ REMEDIAL",
+        "TEST/ REMEDIAL",
+        "TEST/ REMEDIAL",
+      ],
     },
   },
 };
 
 const containerElement = document.querySelector("#table-container");
 const selectElement = document.querySelector("#select-semseter");
-const submitElement = document.querySelector('#semester-submit-btn');
+const submitElement = document.querySelector("#semester-submit-btn");
 const days = [
   "Sunday",
   "Monday",
@@ -216,7 +216,8 @@ const days = [
 ];
 const LoadSundayAlert = () => {
   const divContainer = document.createElement("div");
-  divContainer.className="position-relative p-5 text-center text-muted rounded d-5";
+  divContainer.className =
+    "position-relative p-5 text-center text-muted rounded d-5";
 
   divContainer.innerHTML = `
     <img class="bi mt-5 mb-3" src="assets/home.svg" width="48" height="48 aria-hidden="true" />
@@ -227,11 +228,9 @@ const LoadSundayAlert = () => {
   containerElement.appendChild(divContainer);
 };
 
-
 const LoadTodayRoutine = (semseter) => {
   const dayNumber = new Date().getDay();
-  if (dayNumber == 0)
-  {
+  if (dayNumber == 0) {
     LoadSundayAlert();
     return;
   }
@@ -242,12 +241,12 @@ const LoadTodayRoutine = (semseter) => {
   const table = document.createElement("table");
   const thead = document.createElement("thead");
   const tbody = document.createElement("tbody");
-  
-  table.className=" table table-dark table-striped table-hover caption-top table-sm";
+
+  table.className =
+    " table table-dark table-striped table-hover caption-top table-sm";
   const caption = document.createElement("caption");
   caption.textContent = days[dayNumber];
-   table.appendChild(caption);
-
+  table.appendChild(caption);
 
   // head row
   const headRow = document.createElement("tr");
@@ -274,10 +273,9 @@ const LoadTodayRoutine = (semseter) => {
 
 LoadTodayRoutine(3);
 
-submitElement.addEventListener("click",(e) => {
-    e.preventDefault();
-    containerElement.innerHTML = "";
-    const semester = selectElement.value;
-    LoadTodayRoutine(semester);
-
+submitElement.addEventListener("click", (e) => {
+  e.preventDefault();
+  containerElement.innerHTML = "";
+  const semester = selectElement.value;
+  LoadTodayRoutine(semester);
 });
