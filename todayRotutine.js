@@ -214,57 +214,81 @@ const days = [
   "Friday",
   "Saturday",
 ];
+
+let customTime = new Date();
 const LoadSundayAlert = () => {
   const divContainer = document.createElement("div");
   divContainer.className =
     "position-relative p-5 text-center text-muted rounded d-5";
-
-  divContainer.innerHTML = `
+    
+    divContainer.innerHTML = `
     <img class="bi mt-5 mb-3" src="assets/home.svg" width="48" height="48 aria-hidden="true" />
     <h2 class="text-body-emphasis">It's Sunday</h2>
     <p class="text-muted">Take it slow and enjoy the moment.</p>
+    
+    `;
+    containerElement.appendChild(divContainer);
+  };
+  
+  const LoadTodayRoutine = (semseter) => {
+    customTime = new Date();
+    const dayNumber = customTime.getDay();
+    if (dayNumber == 0) {
+      LoadSundayAlert();
+      return;
+    }
+    const subjects = routine[`bca_sem${semseter}`].Days[days[dayNumber]];
+    const timeDurations = routine[`bca_sem${semseter}`].Head;
 
-  `;
-  containerElement.appendChild(divContainer);
-};
+    // root sturcture for the table
+    const table = document.createElement("table");
+    const thead = document.createElement("thead");
+    
+    table.className =
+      " table table-striped caption-top ";
+    
+    // thead.classList.add("table-dark");
+    
+    const tbody = document.createElement("tbody");
+    
+    tbody.classList.add("table-striped");
 
-const LoadTodayRoutine = (semseter) => {
-  const dayNumber = new Date().getDay();
-  if (dayNumber == 0) {
-    LoadSundayAlert();
-    return;
-  }
-  const subjects = routine[`bca_sem${semseter}`].Days[days[dayNumber]];
-  const timeDurations = routine[`bca_sem${semseter}`].Head;
-
-  // root sturcture for the table
-  const table = document.createElement("table");
-  const thead = document.createElement("thead");
-  const tbody = document.createElement("tbody");
-
-  table.className =
-    " table table-dark table-striped table-hover caption-top table-sm";
-  const caption = document.createElement("caption");
-  caption.textContent = days[dayNumber];
-  table.appendChild(caption);
+    const caption = document.createElement("caption");
+    caption.textContent = days[dayNumber];
+    table.appendChild(caption);
 
   // head row
   const headRow = document.createElement("tr");
-  headRow.innerHTML = "<th>TimeSlot</th><th>Subject</th>";
+  headRow.innerHTML = '<th scope="col">TimeSlot</th><th scope="col">Subject</th>';
   thead.appendChild(headRow);
 
+  // time related
+  let hour = 8;
+  const mins = 45;
+  const currentHour = customTime.getHours();
+  const currentMins = customTime.getMinutes();
   // table body
   for (let i = 0; i < subjects.length; i++) {
     const tr = document.createElement("tr");
     const th = document.createElement("th");
     const td = document.createElement("td");
-
     th.textContent = timeDurations[i];
     td.textContent = subjects[i];
-
+    // console.log(`hour: ${hour} === ${currentHour} ${hour === currentHour}`);
+    // console.log(`mins: ${currentMins} >= ${mins} ${currentMins >= mins }`);
+    // console.log(`mins: ${currentMins} <= ${mins} ${currentMins <= mins}`);
+    
+    // colored the current subject ongoing
+    if (hour === currentHour && currentMins >= mins) {
+      tr.className = "table-active table-primary";
+    } else if (hour === currentHour - 1 && currentMins <= mins) {
+      tr.className = "table-active table-primary";
+    }
+    
     tr.appendChild(th);
     tr.appendChild(td);
     tbody.appendChild(tr);
+    hour++;
   }
   table.appendChild(thead);
   table.appendChild(tbody);
