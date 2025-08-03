@@ -216,7 +216,7 @@ const CreateRoutineTable = (semseter) => {
   const tbody = document.createElement("tbody");
 
   // setting the table additonal styles
-  table.className = "table table-dark table-striped table-hover caption-top";
+  table.className = "table text-nowrap table-dark table-striped table-hover caption-top";
 
   // caption appended to the table
   const caption = document.createElement("caption");
