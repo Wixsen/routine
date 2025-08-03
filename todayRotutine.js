@@ -214,10 +214,27 @@ const days = [
   "Friday",
   "Saturday",
 ];
+const LoadSundayAlert = () => {
+  const divContainer = document.createElement("div");
+  divContainer.className="position-relative p-5 text-center text-muted rounded d-5";
+
+  divContainer.innerHTML = `
+    <img class="bi mt-5 mb-3" src="assets/home.svg" width="48" height="48 aria-hidden="true" />
+    <h2 class="text-body-emphasis">It's Sunday</h2>
+    <p class="text-muted">Take it slow and enjoy the moment.</p>
+
+  `;
+  containerElement.appendChild(divContainer);
+};
+
 
 const LoadTodayRoutine = (semseter) => {
   const dayNumber = new Date().getDay();
-
+  if (dayNumber == 0)
+  {
+    LoadSundayAlert();
+    return;
+  }
   const subjects = routine[`bca_sem${semseter}`].Days[days[dayNumber]];
   const timeDurations = routine[`bca_sem${semseter}`].Head;
 
