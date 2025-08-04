@@ -105,7 +105,7 @@ const routine = {
         "Lab: OOP (JB)",
       ],
       Thursday: [
-        "BCA23203T OS (AA)",
+        "OS (AA)",
         "AEC-III",
         " OOP (JB)",
         "Lab: OOP (JB)",
