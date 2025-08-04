@@ -245,7 +245,7 @@ const LoadSundayAlert = () => {
     const thead = document.createElement("thead");
     
     table.className =
-      " table table-striped caption-top ";
+      " table table-striped caption-top";
     
     // thead.classList.add("table-dark");
     
@@ -281,7 +281,7 @@ const LoadSundayAlert = () => {
     // colored the current subject ongoing
     if (hour === currentHour && currentMins >= mins) {
       tr.className = "table-active table-primary";
-    } else if (hour === currentHour - 1 && currentMins <= mins) {
+    } else if (hour === currentHour - 1 && currentMins < mins) {
       tr.className = "table-active table-primary";
     }
     
