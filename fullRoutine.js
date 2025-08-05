@@ -204,7 +204,6 @@ const routine = {
 
 const container = document.getElementById("table-wrapper");
 const selectSemseterElement = document.getElementById("select-semseter");
-const semseterSubmitBtnElement = document.getElementById("semester-submit-btn");
 
 // function to generate the Table
 const CreateRoutineTable = (semseter) => {
@@ -264,7 +263,7 @@ const CreateRoutineTable = (semseter) => {
 
 CreateRoutineTable(3);
 
-semseterSubmitBtnElement.addEventListener("click", (e) => {
+selectSemseterElement.addEventListener("change", (e) => {
   e.preventDefault();
   if (selectSemseterElement.value === "none") return;
   container.innerHTML = "";

@@ -204,7 +204,7 @@ const routine = {
 
 const containerElement = document.querySelector("#table-container");
 const selectElement = document.querySelector("#select-semseter");
-const submitElement = document.querySelector("#semester-submit-btn");
+// const submitElement = document.querySelector("#semester-submit-btn");
 const days = [
   "Sunday",
   "Monday",
@@ -297,7 +297,7 @@ const LoadSundayAlert = () => {
 
 LoadTodayRoutine(3);
 
-submitElement.addEventListener("click", (e) => {
+selectElement.addEventListener("change", (e) => {
   e.preventDefault();
   containerElement.innerHTML = "";
   const semester = selectElement.value;
