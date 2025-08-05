@@ -1,45 +1,106 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BCA Semseter Routine</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-        <ul class="nav nav-pills"> 
-            <li class="nav-item">
-                <a href="./index.html" class="nav-link">Today's Routine</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link active">Full Routine</a>
-            </li>
-        </ul>
-    </header>
-    <main class="container fs-6 fs-sm-3 fs-md-1 fs-lg-1 fs-xl-2">
-        <div class="table-responsive" id="table-wrapper">
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="container py-3 border-bottom mb-5">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Bca Info</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="nav-icon"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div
+            class="offcanvas offcanvas-start offcanvas-size-md"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                Bca Info
+              </h5>
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Routine</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Course Syllabus</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Notes</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="form-floating mb-3 ">
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="card text-center">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Today's Routine</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="true" href="#">Full Routine</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive" id="table-wrapper"></div>
+        </div>
+      </div>
+
+      <div class="form-floating mb-3">
         <select id="select-semseter" class="form-select mt-5">
-            <option value="1">Semester 1</option>
-            <option value="3" selected>Semester 3</option>
-            <option value="5">Semester 5</option>
+          <option value="1">Semester 1</option>
+          <option value="3" selected>Semester 3</option>
+          <option value="5">Semester 5</option>
         </select>
         <label for="select-semseter">Select Semester</label>
-        </div>
+      </div>
 
-        <!-- Styled Submit Button -->
-        <div class="d-grid gap-2 mb-4 ">
-            <button id="semester-submit-btn" class="btn btn-outline-primary btn-lg shadow-sm">
-                <i class="bi bi-send-fill"></i> Submit
-            </button>
-            </div>
-
+      <!-- Styled Submit Button -->
+      <div class="d-grid gap-2 mb-4">
+        <button
+          id="semester-submit-btn"
+          class="btn btn-outline-primary btn-lg shadow-sm"
+        >
+          <i class="bi bi-send-fill"></i> Submit
+        </button>
+      </div>
     </main>
-    
-    
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-     <script src="fullRoutine.js"></script>
-</body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="fullRoutine.js"></script>
+  </body>
 </html>
