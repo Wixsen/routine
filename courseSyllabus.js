@@ -104,7 +104,7 @@ const createSujectDropDown = (container, name, displayName, courseSubjects) => {
     
     const text = document.createElement("p");
     text.textContent = detail.name;
-    text.className = "card-body";
+    text.className = "card-body p-0";
     cardElement.appendChild(text);
     
     cardColConfigElement.appendChild(cardElement);
