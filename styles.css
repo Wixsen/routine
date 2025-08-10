@@ -10,3 +10,8 @@
     background-color: rgb(73, 67, 67);
     border-color: white;
 }
+
+@media (min-width: 576px) { .w-sm-100 { width: 100% !important; } }
+@media (min-width: 768px) { .w-md-75 { width: 75% !important; } }
+@media (min-width: 992px) { .w-lg-50 { width: 50% !important; } }
+

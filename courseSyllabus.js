@@ -4,17 +4,17 @@ const course = {
     {
       name: "Operating System",
       svg: "assets/subject-logo/os-windows-logo.svg",
-      link: "",
+      link: "Syllabus/os.html",
     },
     {
       name: "DBMS",
       svg: "assets/subject-logo/database.svg",
-      link: "",
+      link: "Syllabus/dbms.html",
     },
     {
       name: "OOP",
       svg: "assets/subject-logo/java.svg",
-      link: "",
+      link: "Syllabus/oop.html",
     },
   ],
   labSubjects: [
@@ -48,10 +48,15 @@ const course = {
   ],
 };
 
-const coreSubjectContainerElement = document.querySelector("#coreSubjectContainer");
-const labSubjectContainerElement = document.querySelector("#labSubjectContainer");
-const optionalSubjectContainerElement = document.querySelector("#optionalSubjectContainer");
-
+const coreSubjectContainerElement = document.querySelector(
+  "#coreSubjectContainer"
+);
+const labSubjectContainerElement = document.querySelector(
+  "#labSubjectContainer"
+);
+const optionalSubjectContainerElement = document.querySelector(
+  "#optionalSubjectContainer"
+);
 
 const createSujectDropDown = (container, name, displayName, courseSubjects) => {
   const id = `${name}-collapse`;
@@ -95,18 +100,23 @@ const createSujectDropDown = (container, name, displayName, courseSubjects) => {
     // TODO: Link
     const cardElement = document.createElement("a");
     cardElement.className = "btn card border subject-button";
-    
+    if (detail.link) {
+      cardElement.setAttribute("href", detail.link);
+    } else {
+      cardElement.classList.add("disabled");
+      cardElement.style.pointerEvents = "none";
+    }
     const img = document.createElement("img");
     img.setAttribute("src", detail.svg);
     img.className = "p-4 pb-1 img-fuild";
     cardElement.appendChild(img);
     // img.setAttribute("alt",);
-    
+
     const text = document.createElement("p");
     text.textContent = detail.name;
     text.className = "card-body p-0";
     cardElement.appendChild(text);
-    
+
     cardColConfigElement.appendChild(cardElement);
     cardRowElement.appendChild(cardColConfigElement);
   });
@@ -129,8 +139,6 @@ createSujectDropDown(
   "Lab Subject",
   labSubjects
 );
-
-
 
 const optionalSubjects = course.optionalSubjects;
 createSujectDropDown(

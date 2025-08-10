@@ -222,7 +222,7 @@ const LoadSundayAlert = () => {
     "position-relative p-5 text-center text-muted rounded d-5";
     
     divContainer.innerHTML = `
-    <img class="bi mt-5 mb-3 text-center w-100" src="assets/anya-shake-wake-up-anya.gif" width="250" alt="anya-sleeping"aria-hidden="true" />
+    <img class="bi mt-5 mb-3 text-center w-100 w-sm-100 w-md-75 w-lg-50" src="assets/anya-shake-wake-up-anya.gif" alt="anya-sleeping"aria-hidden="true" />
     <h2 class="text-body-emphasis">It's Sunday</h2>
     <p class="text-muted">Take it slow and enjoy the moment.</p>
     
