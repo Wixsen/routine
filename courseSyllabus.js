@@ -39,22 +39,26 @@ const course = {
       link: "",
     },
   ],
-  optionalSubjects: [
+  mdcSubjects: [
     {
-      name: "MDC",
-      svg: "assets/subject-logo/os-windows-logo.svg",
-      link: "",
+      name: "MATLAB",
+      svg: "assets/subject-logo/matlab.svg",
+      link: "#",
     },
     {
-      name: "AEC",
-      svg: "assets/subject-logo/os-windows-logo.svg",
-      link: "",
+      name: "Entrepreneurship Developement",
+      svg: "assets/subject-logo/Entrepreneurship.jpg",
+      link: "#",
     },
+  ],
+  aecSubjects: [
     {
-      name: "SEC",
-      svg: "assets/subject-logo/os-windows-logo.svg",
-      link: "",
+      name: "Art of learning",
+      svg: "assets/subject-logo/artsofLearning.webp",
+      link: "#",
     },
+  ],
+  vacSubjects: [
   ],
 };
 
@@ -64,8 +68,14 @@ const coreSubjectContainerElement = document.querySelector(
 const labSubjectContainerElement = document.querySelector(
   "#labSubjectContainer"
 );
-const optionalSubjectContainerElement = document.querySelector(
-  "#optionalSubjectContainer"
+const mdcSubjectContainerElement = document.querySelector(
+  "#mdcSubjectContainer"
+);
+const aecSubjectContainerElement = document.querySelector(
+  "#aecSubjectContainer"
+);
+const vacSubjectContainerElement = document.querySelector(
+  "#vacSubjectContainer"
 );
 
 // path directory
@@ -90,7 +100,7 @@ const createSujectDropDown = (container, name, displayName, courseSubjects) => {
 
   collapseButton.innerHTML = `
     <span>
-        ${displayName} <span class="badge bg-secondary text">New</span>
+        ${displayName} 
     </span>
     <i class="bi bi-chevron-down transition"></i>`;
   rootElement.appendChild(collapseButton);
@@ -155,10 +165,24 @@ createSujectDropDown(
   labSubjects
 );
 
-const optionalSubjects = course.optionalSubjects;
+const mdcSubjects = course.mdcSubjects;
 createSujectDropDown(
-  optionalSubjectContainerElement,
-  "optionalSubjects",
-  "Optional Subject",
-  optionalSubjects
+  mdcSubjectContainerElement,
+  "mdcSubjects",
+  "MDC Subject",
+  mdcSubjects
+);
+const aecSubjects = course.aecSubjects;
+createSujectDropDown(
+  aecSubjectContainerElement,
+  "aecSubjects",
+  "AEC Subject",
+  aecSubjects
+);
+const vacSubjects = course.vacSubjects;
+createSujectDropDown(
+  vacSubjectContainerElement,
+  "vacSubjects",
+  "VAC Subject",
+  vacSubjects
 );
