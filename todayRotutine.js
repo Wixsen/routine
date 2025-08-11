@@ -78,8 +78,8 @@ const routine = {
     ],
     Days: {
       Monday: [
-        "MDC-III",
         "SEC-III",
+        "MDC-III",
         "DBMS (MRS)",
         "OS (AA)",
         "Break",
@@ -96,8 +96,8 @@ const routine = {
         "OS (AA)",
       ],
       Wednesday: [
-        "MDC",
         "SEC",
+        "MDC",
         "LIBRARY",
         "OOP (JB)",
         "Break",
@@ -114,8 +114,8 @@ const routine = {
         "Lab: DBMS (MRS)",
       ],
       Friday: [
-        "MDC-III",
         "SEC-III",
+        "MDC-III",
         "DBMS (MRS)",
         "Lab: DBMS (MRS)",
         "Break",
