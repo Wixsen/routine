@@ -1,3 +1,13 @@
+import { createNavPath } from "./navPath.js";
+
+const navdata = [
+  {
+    name: "BCA-III",
+    path: "#",
+    isActive: true,
+  },
+];
+
 const course = {
   name: "BCA 3rd Sem",
   coreSubjects: [
@@ -57,6 +67,11 @@ const labSubjectContainerElement = document.querySelector(
 const optionalSubjectContainerElement = document.querySelector(
   "#optionalSubjectContainer"
 );
+
+// path directory
+const pathElement = document.querySelector("#navPath");
+const pathCreatedElement =  createNavPath("index.html", navdata);
+pathElement.appendChild(pathCreatedElement);
 
 const createSujectDropDown = (container, name, displayName, courseSubjects) => {
   const id = `${name}-collapse`;

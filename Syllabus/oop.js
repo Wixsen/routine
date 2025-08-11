@@ -1,4 +1,8 @@
 import {createModuleSection} from './moduleUtil.js'
+import {oopPath} from "./coursePath.js"
+import { createNavPath } from "./../navPath.js";
+
+
 
 const bcaSem3Course = [
   {
@@ -83,6 +87,12 @@ const bcaSem3Course = [
   //   moduleList: ["Java Operators", "Expressions,", "Statements and Arrays"],
   // },
 ];
+
+// path directory
+const pathElement = document.querySelector("#navPath");
+const pathCreatedElement =  createNavPath("../index.html", oopPath);
+pathElement.appendChild(pathCreatedElement);
+
 
 const moduleSection = document.querySelector("#moduleSection");
 

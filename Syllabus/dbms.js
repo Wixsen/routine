@@ -1,4 +1,6 @@
 import {createModuleSection} from './moduleUtil.js'
+import { createNavPath } from "./../navPath.js";
+import {dbmsPath} from "./coursePath.js"
 
 
 const bcaSem3Course = [
@@ -100,6 +102,12 @@ const bcaSem3Course = [
     ],
   },
 ];
+
+// path directory
+const pathElement = document.querySelector("#navPath");
+const pathCreatedElement =  createNavPath("../index.html", dbmsPath);
+pathElement.appendChild(pathCreatedElement);
+
 
 const moduleSection = document.querySelector("#moduleSection");
 createModuleSection(moduleSection, "DBMS", bcaSem3Course);
