@@ -87,26 +87,26 @@ const routine = {
         "Lab: OOP (JB)",
       ],
       Tuesday: [
-        "DBMS (MRS)",
         "AEC-III",
-        "Lab: DBMS (MRS)",
+        "DBMS (MRS)",
+        "OS (AA)",
         "Lab: DBMS (MRS)",
         "Break",
-        "OS (AA)",
-        "OS (AA)",
+        "Club",
+        "Club",
       ],
       Wednesday: [
         "SEC",
         "MDC",
-        "LIBRARY",
+        "LIBRARY/DBMS",
         "OOP (JB)",
         "Break",
         "Lab: OOP (JB)",
         "Lab: OOP (JB)",
       ],
       Thursday: [
-        "OS (AA)",
         "AEC-III",
+        "BCA23203T OS (AA)",
         " OOP (JB)",
         "Lab: OOP (JB)",
         "Break",
@@ -215,7 +215,8 @@ const CreateRoutineTable = (semseter) => {
   const tbody = document.createElement("tbody");
 
   // setting the table additonal styles
-  table.className = "table text-nowrap table-dark table-striped table-hover caption-top";
+  table.className =
+    "table text-nowrap table-dark table-striped table-hover caption-top";
 
   // caption appended to the table
   const caption = document.createElement("caption");
