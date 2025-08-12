@@ -34,3 +34,15 @@ export const osPath = [
     isActive: true,
   },
 ];
+export const artOfLearningPath = [
+  {
+    name: "BCA-III",
+    path: "../../courseSyllabus.html",
+    isActive: false,
+  },
+  {
+    name: "Art Of Learning",
+    path: "#",
+    isActive: true,
+  },
+];

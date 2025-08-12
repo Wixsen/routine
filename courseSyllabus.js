@@ -48,17 +48,37 @@ const course = {
     {
       name: "Entrepreneurship Developement",
       svg: "assets/subject-logo/Entrepreneurship.jpg",
-      link: "#",
+      link: "Syllabus/Mdc/entreprenurship.html",
     },
   ],
   aecSubjects: [
     {
       name: "Art of learning",
       svg: "assets/subject-logo/artsofLearning.webp",
-      link: "#",
+      link: "Syllabus/Aec/artOfLearning.html",
     },
   ],
-  vacSubjects: [
+  secSubjects: [
+    {
+      name: "Japanese",
+      svg: "assets/subject-logo/fuji-japan-japanese-svgrepo-com.svg",
+      link: "#",
+    },
+    {
+      name: "Russian",
+      svg: "assets/subject-logo/russian.svg",
+      link: "#",
+    },
+    {
+      name: "French",
+      svg: "assets/subject-logo/france.svg",
+      link: "#",
+    },
+    {
+      name: "Mobile photography",
+      svg: "assets/subject-logo/camera.svg",
+      link: "#",
+    },
   ],
 };
 
@@ -74,8 +94,8 @@ const mdcSubjectContainerElement = document.querySelector(
 const aecSubjectContainerElement = document.querySelector(
   "#aecSubjectContainer"
 );
-const vacSubjectContainerElement = document.querySelector(
-  "#vacSubjectContainer"
+const secSubjectContainerElement = document.querySelector(
+  "#secSubjectContainer"
 );
 
 // path directory
@@ -179,10 +199,10 @@ createSujectDropDown(
   "AEC Subject",
   aecSubjects
 );
-const vacSubjects = course.vacSubjects;
+const secSubjects = course.secSubjects;
 createSujectDropDown(
-  vacSubjectContainerElement,
-  "vacSubjects",
-  "VAC Subject",
-  vacSubjects
+  secSubjectContainerElement,
+  "secSubjects",
+  "SEC Subject",
+  secSubjects
 );

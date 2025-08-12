@@ -3,6 +3,11 @@ import { createNavPath } from "./../navPath.js";
 import {dbmsPath} from "./coursePath.js"
 
 
+// path directory
+const pathElement = document.querySelector("#navPath");
+const pathCreatedElement =  createNavPath("../index.html", dbmsPath);
+pathElement.appendChild(pathCreatedElement);
+
 const bcaSem3Course = [
   {
     title: "Introduction to Databases",
@@ -103,10 +108,6 @@ const bcaSem3Course = [
   },
 ];
 
-// path directory
-const pathElement = document.querySelector("#navPath");
-const pathCreatedElement =  createNavPath("../index.html", dbmsPath);
-pathElement.appendChild(pathCreatedElement);
 
 
 const moduleSection = document.querySelector("#moduleSection");
