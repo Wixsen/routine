@@ -87,13 +87,13 @@ const routine = {
         "Lab: OOP (JB)",
       ],
       Tuesday: [
-        "DBMS (MRS)",
         "AEC-III",
+        "DBMS (MRS)",
         "Lab: DBMS (MRS)",
         "Lab: DBMS (MRS)",
         "Break",
-        "OS (AA)",
-        "OS (AA)",
+        "Club",
+        "Club",
       ],
       Wednesday: [
         "SEC",
@@ -105,8 +105,8 @@ const routine = {
         "Lab: OOP (JB)",
       ],
       Thursday: [
-        "BCA23203T OS (AA)",
         "AEC-III",
+        "BCA23203T OS (AA)",
         " OOP (JB)",
         "Lab: OOP (JB)",
         "Break",
