@@ -89,8 +89,8 @@ const routine = {
       Tuesday: [
         "AEC-III",
         "DBMS (MRS)",
-        "OS (AA)",
         "LIBRARY",
+        "OS (AA)",
         "Break",
         "Club",
         "Club",
