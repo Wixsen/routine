@@ -14,17 +14,17 @@ const course = {
     {
       name: "Operating System",
       svg: "assets/subject-logo/os-windows-logo.svg",
-      link: "Syllabus/os.html",
+      link: "Syllabus/Core/os.html",
     },
     {
       name: "DBMS",
       svg: "assets/subject-logo/database.svg",
-      link: "Syllabus/dbms.html",
+      link: "Syllabus/Core/dbms.html",
     },
     {
       name: "OOP",
       svg: "assets/subject-logo/java.svg",
-      link: "Syllabus/oop.html",
+      link: "Syllabus/Core/oop.html",
     },
   ],
   labSubjects: [

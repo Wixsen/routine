@@ -8,13 +8,35 @@ const createModuleList = (courseList) => {
   courseList.forEach((item) => {
     const li = document.createElement("li");
     li.className = "list-group-item";
-    li.textContent = item;
+
+    const topic = document.createElement("span");
+    topic.textContent = item.topic;
+    topic.className = "fw-semibold"
+    li.appendChild(topic);
+
+    if (item.nestList != null) {
+      const nestedList = document.createElement("ul");
+      nestedList.className = "list-group my-3 list-group-horizontal overflow-auto flex-nowrap fw-light";
+      item.nestList.forEach((nestedText) => {
+        const nestedLi = document.createElement("li");
+        nestedLi.className = "list-group-item p-2 text-center ";
+        nestedLi.style.minWidth = "8rem";
+        nestedLi.style.wordBreak = "break-word";
+
+        nestedLi.textContent = nestedText;
+        nestedList.appendChild(nestedLi);
+      });
+      li.appendChild(nestedList);
+    }
+
     ul.appendChild(li);
   });
   div.appendChild(ul);
 
   return div;
 };
+
+
 export const createModuleSection = (containerNode, name, courseList) => {
   const titleElement = document.createElement("h2");
   titleElement.className = "f-3 lead pb-2";

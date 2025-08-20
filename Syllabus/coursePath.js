@@ -1,7 +1,7 @@
 export const dbmsPath = [
   {
     name: "BCA-III",
-    path: "../courseSyllabus.html",
+    path: "../../courseSyllabus.html",
     isActive: false,
   },
   {
@@ -13,7 +13,7 @@ export const dbmsPath = [
 export const oopPath = [
   {
     name: "BCA-III",
-    path: "../courseSyllabus.html",
+    path: "../../courseSyllabus.html",
     isActive: false,
   },
   {
@@ -25,7 +25,7 @@ export const oopPath = [
 export const osPath = [
   {
     name: "BCA-III",
-    path: "../courseSyllabus.html",
+    path: "../../courseSyllabus.html",
     isActive: false,
   },
   {

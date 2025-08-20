@@ -258,7 +258,7 @@ const LoadSundayAlert = () => {
 
   // head row
   const headRow = document.createElement("tr");
-  headRow.innerHTML = '<th scope="col">TimeSlot</th><th scope="col">Subject</th>';
+  headRow.innerHTML = '<th scope="col">TimeSlot</th><th scope="col">Subject</th><th>Status</th>';
   thead.appendChild(headRow);
 
   // time related
@@ -273,6 +273,8 @@ const LoadSundayAlert = () => {
     const td = document.createElement("td");
     th.textContent = timeDurations[i];
     td.textContent = subjects[i];
+    const td2 = document.createElement("td");
+    td2.textContent = "Not ready";
     // console.log(`hour: ${hour} === ${currentHour} ${hour === currentHour}`);
     // console.log(`mins: ${currentMins} >= ${mins} ${currentMins >= mins }`);
     // console.log(`mins: ${currentMins} <= ${mins} ${currentMins <= mins}`);
@@ -286,6 +288,7 @@ const LoadSundayAlert = () => {
     
     tr.appendChild(th);
     tr.appendChild(td);
+    tr.appendChild(td2);
     tbody.appendChild(tr);
     hour++;
   }
