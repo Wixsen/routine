@@ -106,8 +106,8 @@ const routine = {
       ],
       Thursday: [
         "AEC-III",
-        "BCA23203T OS (AA)",
-        " OOP (JB)",
+        "OS (AA)",
+        "OOP (JB)",
         "Lab: OOP (JB)",
         "Break",
         "DBMS (MRS)",
@@ -220,45 +220,67 @@ const LoadSundayAlert = () => {
   const divContainer = document.createElement("div");
   divContainer.className =
     "position-relative p-5 text-center text-muted rounded d-5";
-    
-    divContainer.innerHTML = `
+
+  divContainer.innerHTML = `
     <img class="bi mt-5 mb-3 text-center w-100 w-sm-100 w-md-75 w-lg-50" src="assets/umaru-sleeping.gif" alt="anya-sumaru sleeping"aria-hidden="true" />
     <h2 class="text-body-emphasis">It's Sunday</h2>
     <p class="text-muted">Take it slow and enjoy the moment.</p>
     `;
-    containerElement.appendChild(divContainer);
-  };
+  containerElement.appendChild(divContainer);
+};
+
+const LoadTodayRoutine = (semseter) => {
+  customTime = new Date();
+  const dayNumber = customTime.getDay();
+  if (dayNumber == 0) {
+    LoadSundayAlert();
+    return;
+  }
+  const subjects = routine[`bca_sem${semseter}`].Days[days[dayNumber]];
+  const timeDurations = routine[`bca_sem${semseter}`].Head;
+
+  // root sturcture for the table
+  const table = document.createElement("table");
+  table.className = " table table-striped caption-top rounded-4 overflow-hidden";
+  const thead = document.createElement("thead");
+
+
+  // thead.classList.add("table-dark");
+
+  const tbody = document.createElement("tbody");
+
+  tbody.classList.add("table-striped");
+
+  const caption = document.createElement("caption");
+  caption.className = "d-flex justify-content-between caption-top me-3";
+  const dayElement = document.createElement("div");
+  dayElement.textContent = days[dayNumber];
   
-  const LoadTodayRoutine = (semseter) => {
-    customTime = new Date();
-    const dayNumber = customTime.getDay();
-    if (dayNumber == 0) {
-      LoadSundayAlert();
-      return;
-    }
-    const subjects = routine[`bca_sem${semseter}`].Days[days[dayNumber]];
-    const timeDurations = routine[`bca_sem${semseter}`].Head;
+  const timeElement = document.createElement("div");
+  setInterval(() => {
+    const currentTime = new Date();
+    let hour = currentTime.getHours() ;
+    let amOrPm = hour < 13 ? "AM" : "PM";
+    hour %= 12
+    hour = hour < 10 ? "0" + hour : hour;
+    hour = hour == 0 ? 12 : hour ;
 
-    // root sturcture for the table
-    const table = document.createElement("table");
-    const thead = document.createElement("thead");
+    let mins = currentTime.getMinutes() ;
+    mins =  mins < 10 ? "0" + mins :  mins;
     
-    table.className =
-      " table table-striped caption-top";
-    
-    // thead.classList.add("table-dark");
-    
-    const tbody = document.createElement("tbody");
-    
-    tbody.classList.add("table-striped");
+    let sec = currentTime.getSeconds() ;
+    sec =  sec < 10 ? "0" + sec :  sec;
 
-    const caption = document.createElement("caption");
-    caption.textContent = days[dayNumber];
-    table.appendChild(caption);
+    timeElement.textContent = `${hour}:${mins}:${sec} ${amOrPm}`;
+  },100);
+  caption.appendChild(dayElement);
+  caption.appendChild(timeElement);
+  containerElement.appendChild(caption);
 
   // head row
   const headRow = document.createElement("tr");
-  headRow.innerHTML = '<th scope="col">TimeSlot</th><th scope="col">Subject</th><th>Status</th>';
+  headRow.innerHTML =
+    '<th scope="col">TimeSlot</th><th scope="col">Subject</th>';
   thead.appendChild(headRow);
 
   // time related
@@ -273,22 +295,19 @@ const LoadSundayAlert = () => {
     const td = document.createElement("td");
     th.textContent = timeDurations[i];
     td.textContent = subjects[i];
-    const td2 = document.createElement("td");
-    td2.textContent = "Not ready";
     // console.log(`hour: ${hour} === ${currentHour} ${hour === currentHour}`);
     // console.log(`mins: ${currentMins} >= ${mins} ${currentMins >= mins }`);
     // console.log(`mins: ${currentMins} <= ${mins} ${currentMins <= mins}`);
-    
+
     // colored the current subject ongoing
     if (hour === currentHour && currentMins >= mins) {
       tr.className = "table-active table-primary";
     } else if (hour === currentHour - 1 && currentMins < mins) {
       tr.className = "table-active table-primary";
     }
-    
+
     tr.appendChild(th);
     tr.appendChild(td);
-    tr.appendChild(td2);
     tbody.appendChild(tr);
     hour++;
   }
@@ -305,3 +324,4 @@ selectElement.addEventListener("change", (e) => {
   const semester = selectElement.value;
   LoadTodayRoutine(semester);
 });
+

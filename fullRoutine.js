@@ -106,8 +106,8 @@ const routine = {
       ],
       Thursday: [
         "AEC-III",
-        "BCA23203T OS (AA)",
-        " OOP (JB)",
+        "OS (AA)",
+        "OOP (JB)",
         "Lab: OOP (JB)",
         "Break",
         "DBMS (MRS)",
