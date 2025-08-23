@@ -213,7 +213,7 @@ const CreateRoutineTable = (semseter) => {
   const table = document.createElement("table");
   const thead = document.createElement("thead");
   const tbody = document.createElement("tbody");
-
+  tbody.className="table-group-divider fw-light"
   // setting the table additonal styles
   table.className =
     "table text-nowrap table-dark table-striped table-hover caption-top";
@@ -241,6 +241,7 @@ const CreateRoutineTable = (semseter) => {
   for (const day in semseterData.Days) {
     const tr = document.createElement("tr");
     const th = document.createElement("th");
+    th.className= "fw-medium";
     th.textContent = day;
     tr.appendChild(th);
     semseterData.Days[day].forEach((subject) => {

@@ -241,18 +241,16 @@ const LoadTodayRoutine = (semseter) => {
 
   // root sturcture for the table
   const table = document.createElement("table");
-  table.className = " table table-striped caption-top rounded-4 overflow-hidden";
+  table.className = " table table-striped caption-top rounded-4 overflow-hidden table-dark ";
   const thead = document.createElement("thead");
 
 
-  // thead.classList.add("table-dark");
-
   const tbody = document.createElement("tbody");
 
-  tbody.classList.add("table-striped");
+  tbody.className = "table-group-divider fw-light" ;
 
   const caption = document.createElement("caption");
-  caption.className = "d-flex justify-content-between caption-top me-3";
+  caption.className = "d-flex justify-content-between caption-top mx-2";
   const dayElement = document.createElement("div");
   dayElement.textContent = days[dayNumber];
   
@@ -292,6 +290,7 @@ const LoadTodayRoutine = (semseter) => {
   for (let i = 0; i < subjects.length; i++) {
     const tr = document.createElement("tr");
     const th = document.createElement("th");
+    th.className = "fw-medium";
     const td = document.createElement("td");
     th.textContent = timeDurations[i];
     td.textContent = subjects[i];
